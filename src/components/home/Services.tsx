@@ -2,6 +2,8 @@ import { BrainCircuit, CheckCircle2, ChevronRight, Globe, Headphones, LineChart,
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import Link from "next/link";
+
 
 const Services = () => {
   const services = [
@@ -105,12 +107,14 @@ const Services = () => {
                     </div>
                   ))}
                 </div>
+                <Link href="/our-services">
                 <Button
                   variant="link"
-                  className="p-0 text-indigo-600 group/btn hover:text-indigo-700"
-                >
+                  className="p-0 cursor-pointer text-indigo-600 group/btn hover:text-indigo-700"
+                  >
                   Learn More <ChevronRight className="ml-1 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
                 </Button>
+                  </Link>
               </CardContent>
             </Card>
           ))}

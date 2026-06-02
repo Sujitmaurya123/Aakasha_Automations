@@ -1,4 +1,4 @@
-import Contact from "@/components/home/Contact";
+
 import Hero from "@/components/home/Hero";
 import HowItWorks from "@/components/home/HowItWorks";
 import Industries from "@/components/home/Industries";
@@ -19,7 +19,6 @@ export default function Home() {
       <HowItWorks />
       <Industries />
       <MidPageCTA />
-      <Contact />
    </>
   );
 }

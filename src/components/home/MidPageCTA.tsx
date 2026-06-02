@@ -1,5 +1,6 @@
 
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 
 const MidPageCTA = () => {
@@ -13,9 +14,11 @@ const MidPageCTA = () => {
           Join the growing number of startups and entrepreneurs who are scaling
           faster with the power of AI. Let&apos;s build something extraordinary together.
         </p>
-        <Button size="lg" className="bg-white text-indigo-600 hover:bg-slate-100 rounded-full px-8">
+         <Link href="/contact-us">
+        <Button size="lg" className="bg-white cursor-pointer text-indigo-600 hover:bg-slate-100 rounded-full px-8">
           Book Your Free Consultation →
         </Button>
+         </Link>
       </div>
     </section>
   );

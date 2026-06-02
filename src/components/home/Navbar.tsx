@@ -9,13 +9,6 @@ import Image from "next/image";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
-  const navItems = [
-    "Home",
-    "About",
-    "Services",
-    "How It Works",
-    "Contact",
-  ];
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-slate-200 bg-white/90 backdrop-blur-md">
@@ -42,22 +35,24 @@ export default function Navbar() {
 
           {/* Desktop Menu */}
           <nav className="hidden items-center gap-8 md:flex">
-            {navItems.map((item) => (
-              <Link
-                key={item}
-                href={`#${item.toLowerCase().replace(/\s+/g, "")}`}
-                className="text-sm font-medium text-slate-600 transition hover:text-indigo-600"
-              >
-                {item}
+            <Link href="/" className="text-sm font-medium text-slate-600 transition hover:text-indigo-600">Home
               </Link>
-            ))}
+              <Link href="/about-us" className="text-sm font-medium text-slate-600 transition hover:text-indigo-600">About
+              </Link>
+            
+            <Link href="/our-services" className="text-sm font-medium text-slate-600 transition hover:text-indigo-600">Services
+              </Link>
+              <Link href="/contact-us" className="text-sm font-medium text-slate-600 transition hover:text-indigo-600">Contact
+              </Link>
           </nav>
 
           {/* Desktop Button */}
           <div className="hidden md:block">
-            <Button className="rounded-full bg-indigo-600 px-5 text-white hover:bg-indigo-700">
+             <Link href="/contact-us">
+            <Button className=" cursor-pointer rounded-full bg-indigo-600 px-5 text-white hover:bg-indigo-700">
               Book Consultation
             </Button>
+             </Link>
           </div>
 
           {/* Mobile Toggle */}
@@ -77,20 +72,20 @@ export default function Navbar() {
         {isOpen && (
           <div className="border-t border-slate-200 py-4 md:hidden">
             <nav className="flex flex-col gap-4">
-              {navItems.map((item) => (
-                <Link
-                  key={item}
-                  href={`#${item.toLowerCase().replace(/\s+/g, "")}`}
-                  onClick={() => setIsOpen(false)}
-                  className="text-sm font-medium text-slate-600 transition hover:text-indigo-600"
-                >
-                  {item}
-                </Link>
-              ))}
-
+              <Link href="/" className="text-sm font-medium text-slate-600 transition hover:text-indigo-600">Home
+              </Link>
+              <Link href="/about-us" className="text-sm font-medium text-slate-600 transition hover:text-indigo-600">About
+              </Link>
+            
+            <Link href="/our-services" className="text-sm font-medium text-slate-600 transition hover:text-indigo-600">Services
+              </Link>
+              <Link href="/contact-us" className="text-sm font-medium text-slate-600 transition hover:text-indigo-600">Contact
+              </Link>
+              <Link href="/contact-us">
               <Button className="mt-2 w-full rounded-full bg-indigo-600 text-white hover:bg-indigo-700">
                 Book Consultation
               </Button>
+              </Link>
             </nav>
           </div>
         )}

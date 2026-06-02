@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Bot, Sparkles, Zap } from "lucide-react";
 import { motion, Variant, Variants } from "framer-motion";
 import { useState, useEffect, useMemo } from "react";
-
+import Link from "next/link";
 const Hero = () => {
   const [messageIndex, setMessageIndex] = useState(0);
   
@@ -238,8 +238,11 @@ const Hero = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                
               >
-                <Button size="lg" className="bg-indigo-600 hover:bg-indigo-700 text-white rounded-full px-8 group">
+                <Link href="/our-services " >
+                
+                <Button size="lg" className= "cursor-pointer bg-indigo-600 hover:bg-indigo-700 text-white rounded-full px-8 group">
                   Explore Our Services
                   <motion.div
                     animate={{ x: [0, 5, 0] }}
@@ -252,6 +255,7 @@ const Hero = () => {
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </motion.div>
                 </Button>
+                </Link>
               </motion.div>
 
               <motion.div
@@ -259,13 +263,16 @@ const Hero = () => {
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: "spring", stiffness: 400, damping: 17 }}
               >
+                 <Link href="/contact-us">
+                 
                 <Button
                   size="lg"
                   variant="outline"
-                  className="rounded-full border-indigo-200 text-indigo-700 hover:bg-indigo-50"
+                  className="cursor-pointer rounded-full border-indigo-200 text-indigo-700 hover:bg-indigo-50"
                 >
                   Book a Free Consultation
                 </Button>
+                </Link>
               </motion.div>
             </motion.div>
 
